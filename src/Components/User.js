@@ -28,4 +28,4 @@ const User = () => {
   )
 }
 
-export default Usersearch 
+export default User 
