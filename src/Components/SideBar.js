@@ -4,7 +4,7 @@ import FavList from './FavList'
 
 const SideBar = () => {
   return (
-    <div className="bg-gray-800 text-white h-full w-1/4 px-3">
+    <div className="fixed top-0 left-0 h-screen w-1/4 bg-gray-800 text-white flex flex-col">
 
         <div className='py-4 font-bold text-3xl text-center'>WATCHLIST</div>
          <User/>
