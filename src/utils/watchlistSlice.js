@@ -18,7 +18,7 @@ const watchlistSlice = createSlice({
     removeMovie: (state, action) => {
       const { email, movieId } = action.payload;
       if (state.watchlists && state.watchlists[email]) {
-        state.watchlists[email] = state.watchlists[email].filter(movie => movie.id !== movieId);
+        state.watchlists[email] = state.watchlists[email].filter(movie => movie.imdbID !== movieId);
       }
     },
     setWatchlist: (state, action) => {

@@ -38,8 +38,8 @@ function App() {
     <div className="flex flex-row h-screen">
       
       <SideBar user={user} onLogout={handleLogout} onLogin={() => setShowAuth(true)} />
-      <Body />
-      {showAuth && <Auth onLogin={handleLogin} onClose={() => setShowAuth(false)} />}
+      <Body onLogin={handleLogin} onClose={() => setShowAuth(false)  } setShowAuth={setShowAuth} />
+      {showAuth && <Auth onLogin={handleLogin} onClose={() => setShowAuth(false) } topmessage={"Login to WatchList"} />}
 
     </div>
   );

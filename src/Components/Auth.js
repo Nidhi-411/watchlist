@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Auth = ({ onLogin, onClose }) => {
+const Auth = ({ onLogin, onClose , topmessage }) => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,12 +19,14 @@ const Auth = ({ onLogin, onClose }) => {
         >
           &times;
         </button>
+        <p className='py-2 font-bold'>{topmessage}</p>
+        <p>Enter your Email</p>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder="eg. abc@gmail.com"
             className="w-full p-2 mb-4 border border-gray-300 rounded"
           />
           <button type="submit" className="btn btn-primary w-full">

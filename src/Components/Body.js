@@ -7,7 +7,9 @@ import { setMovies, filterMovies } from '../utils/listSlice';
 
 
 
-const Body = () => {
+const Body = ({ onLogin, onClose , setShowAuth}) => {
+  
+
 
   const dispatch = useDispatch();
   const movieList = useSelector( (store) => store.movies.movieList);
@@ -78,7 +80,7 @@ const Body = () => {
         <div className="flex flex-wrap justify-center p-4">
       { 
       movieList.map( (movie) => (
-        <MovieCard key={movie.imdbID} movie={movie} />
+        <MovieCard key={movie.imdbID} movie={movie}  onLogin={onLogin} onClose={onClose} setShowAuth={setShowAuth} />
       ))
       }
     </div>

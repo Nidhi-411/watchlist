@@ -20,7 +20,9 @@ const User = () => {
         />
         </div>
         <div className='w-1/2 px-2'> Guest</div>
-        <div className='px-2'>...</div>
+        <div className='px-2'>
+          <button>Login</button>
+        </div>
         <div className="bg-red-500 text-black rounded-md p-1 border-black">
           <button onClick={handleHomeClick}>Home</button>
        </div>

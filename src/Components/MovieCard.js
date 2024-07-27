@@ -4,12 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addMovie } from '../utils/watchlistSlice';
 
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie , setShowAuth }) => {
       const dispatch = useDispatch();
       const user = useSelector((state) => state.auth.user);
+      
 
   const handleAddToWatchlist = () => {
+    if(!user)
+    {
+       setShowAuth(true);  
+    }
+    else{
     dispatch(addMovie({ email: user, movie }));
+    }
   };
 
 
