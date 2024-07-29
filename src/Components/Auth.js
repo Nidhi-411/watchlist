@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Auth = ({ onLogin, onClose , topmessage }) => {
-  const [email, setEmail] = useState('');
+const Auth = ({ onLogin, onClose, topmessage }) => {
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const Auth = ({ onLogin, onClose , topmessage }) => {
         >
           &times;
         </button>
-        <p className='py-2 font-bold'>{topmessage}</p>
+        <p className="py-2 font-bold">{topmessage}</p>
         <p>Enter your Email</p>
         <form onSubmit={handleSubmit}>
           <input

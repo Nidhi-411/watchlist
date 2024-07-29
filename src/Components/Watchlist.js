@@ -1,19 +1,20 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeMovie } from '../utils/watchlistSlice';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { removeMovie } from "../utils/watchlistSlice";
 
-const Watchlist = () => { 
+const Watchlist = () => {
   const user = useSelector((state) => state.auth.user);
-  const watchlist = useSelector((state) => state.watchlist.watchlists[user] || []);
+  const watchlist = useSelector(
+    (state) => state.watchlist.watchlists[user] || []
+  );
   const dispatch = useDispatch();
 
   const handleRemove = (movieId) => {
     dispatch(removeMovie({ email: user, movieId }));
   };
- 
-  return ( 
+
+  return (
     <div className="watchlist-container p-4 h-80 md:h-96 backdrop-blur-sm bg-white/30 md:bg-inherit overflow-y-auto">
-      
       <ul>
         {watchlist.map((movie) => (
           <li key={movie.imdbID} className="mb-2">

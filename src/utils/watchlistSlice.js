@@ -1,14 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   watchlists: {},
 };
 
 const watchlistSlice = createSlice({
-  name: 'watchlist',
+  name: "watchlist",
   initialState,
   reducers: {
     addMovie: (state, action) => {
+      
       const { email, movie } = action.payload;
       if (!state.watchlists[email]) {
         state.watchlists[email] = [];
@@ -18,7 +19,9 @@ const watchlistSlice = createSlice({
     removeMovie: (state, action) => {
       const { email, movieId } = action.payload;
       if (state.watchlists && state.watchlists[email]) {
-        state.watchlists[email] = state.watchlists[email].filter(movie => movie.imdbID !== movieId);
+        state.watchlists[email] = state.watchlists[email].filter(
+          (movie) => movie.imdbID !== movieId
+        );
       }
     },
     setWatchlist: (state, action) => {
