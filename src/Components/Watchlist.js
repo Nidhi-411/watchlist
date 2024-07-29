@@ -12,8 +12,8 @@ const Watchlist = () => {
   };
  
   return ( 
-    <div className="watchlist-container p-4 h-96 overflow-y-auto">
-      <h2 className="text-2xl font-bold mb-4">My Watchlist</h2>
+    <div className="watchlist-container p-4 h-80 md:h-96 backdrop-blur-sm bg-white/30 md:bg-inherit overflow-y-auto">
+      
       <ul>
         {watchlist.map((movie) => (
           <li key={movie.imdbID} className="mb-2">

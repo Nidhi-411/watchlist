@@ -35,7 +35,7 @@ function App() {
   };  
 
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       
       <SideBar user={user} onLogout={handleLogout} onLogin={() => setShowAuth(true)} />
       <Body onLogin={handleLogin} onClose={() => setShowAuth(false)  } setShowAuth={setShowAuth} />
