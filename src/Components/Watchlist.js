@@ -18,21 +18,25 @@ const Watchlist = () => {
       <ul>
         {watchlist.map((movie) => (
           <li key={movie.imdbID} className="mb-2">
-            <div className="flex items-center bg-gray-300 p-2 rounded-md">
+            <div className="flex  w-1/ items-center bg-gray-300 p-2 rounded-md">
+              <div className="w-1/6">
               <img
-                className="h-10 w-10 object-cover rounded-md"
+                className="h-10  object-cover rounded-md"
                 alt={movie.Title}
                 src={movie.Poster}
               />
-              <div className="flex-1 ml-4">
-                <p className=" text-black truncate">{movie.Title}</p>
               </div>
+              <div className="flex-1 w-8/12 ml-4">
+                <p className=" text-black   truncate">{movie.Title}</p>
+              </div>
+              <div className="w-1/12">
               <button
-                className="bg-red-500 text-white p-2 rounded-full ml-auto"
+                className="bg-red-500  text-white p-2 rounded-full "
                 onClick={() => handleRemove(movie.imdbID)}
               >
                 -
               </button>
+              </div>
             </div>
           </li>
         ))}
@@ -40,5 +44,4 @@ const Watchlist = () => {
     </div>
   );
 };
-
 export default Watchlist;
