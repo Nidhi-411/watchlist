@@ -1,11 +1,21 @@
 import React, { useState } from "react";
+import { setWatchlist } from '../utils/watchlistSlice';
+import { useDispatch } from 'react-redux'; 
+
+
 
 const Auth = ({ onLogin, onClose, topmessage }) => {
   const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onLogin) {
+    
+      const storedWatchlists = JSON.parse(localStorage.getItem('watchlists')) || {};
+      const userWatchlist = storedWatchlists[email] || [];
+      dispatch(setWatchlist({ email, watchlist: userWatchlist }));
       onLogin(email);
     }
   };

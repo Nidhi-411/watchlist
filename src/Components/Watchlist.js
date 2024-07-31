@@ -5,7 +5,7 @@ import { removeMovie } from "../utils/watchlistSlice";
 const Watchlist = () => {
   const user = useSelector((state) => state.auth.user);
   const watchlist = useSelector(
-    (state) => state.watchlist.watchlists[user] || []
+      (state) => state.watchlist.watchlists[user] || []
   );
   const dispatch = useDispatch();
 

@@ -6,16 +6,24 @@ import Auth from "./Components/Auth";
 //import Watchlist from './Components/Watchlist';
 import Body from "./Components/Body";
 import SideBar from "./Components/SideBar";
+import watchlistSlice, { setWatchlist } from "./utils/watchlistSlice";
+import Watchlist from "./Components/Watchlist";
+
 
 function App() {
+
   const [showAuth, setShowAuth] = useState(false);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
 
+  const watchlist = useSelector((state) => state.watchlist.watchlists[user] || []);
+
   useEffect(() => {
-    const storeduser = localStorage.getItem("user");
-    if (storeduser) {
-      dispatch(login(storeduser));
+    const storedUser = localStorage.getItem('user');
+    const storedWatchlists = JSON.parse(localStorage.getItem('watchlists')) || {};
+    if (storedUser) {
+      dispatch(login(storedUser));
+      dispatch(setWatchlist({ email: storedUser, watchlist: storedWatchlists[storedUser] || [] }));
     }
   }, [dispatch]);
 
@@ -23,6 +31,7 @@ function App() {
     dispatch(login(email));
     localStorage.setItem("user", email);
     setShowAuth(false);
+    dispatch(setWatchlist(email , watchlist[user]))
   };
 
   const handleLogout = () => {
