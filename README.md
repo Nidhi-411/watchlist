@@ -1,3 +1,22 @@
+# Watchlist App
+
+A web application for managing a personalized movie watchlist, built using React.js, Create React App, Tailwind CSS, and Redux Toolkit. This application allows users to add movies to their watchlist, remove them, and persist their data using local storage for authentication.
+
+## Features
+
+- Add movies to your watchlist
+- Remove movies from your watchlist
+- User-specific watchlists
+- Persistent authentication using local storage
+
+## Technologies Used
+
+- React.js
+- Create React App
+- Tailwind CSS
+- Redux Toolkit
+
+
 # Getting Started with Create React App
 // getting started 
 
